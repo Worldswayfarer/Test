@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr1oy5i3riy2n"]
+
+[ext_resource type="Texture2D" uid="uid://bqsrbif6fu4kj" path="res://serapth Godot2DTutorial master assets/graphics/title/title.png" id="1_xnjex"]
+[ext_resource type="AudioStream" uid="uid://k8drj7o3xg0q" path="res://serapth Godot2DTutorial master assets/audio/InStormAndSunshine.ogg" id="2_3wsjn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_xnjex")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3wsjn")
+autoplay = true

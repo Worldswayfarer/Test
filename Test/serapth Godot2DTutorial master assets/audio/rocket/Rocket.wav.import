@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx877omd8l02g"
+path="res://.godot/imported/Rocket.wav-56258b21a8de6c5803fa8f4e175ae2fa.sample"
+
+[deps]
+
+source_file="res://serapth Godot2DTutorial master assets/audio/rocket/Rocket.wav"
+dest_files=["res://.godot/imported/Rocket.wav-56258b21a8de6c5803fa8f4e175ae2fa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

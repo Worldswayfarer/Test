@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://k8drj7o3xg0q"
+path="res://.godot/imported/InStormAndSunshine.ogg-1b371c43d5e5de1ba1185bac1d6e3e57.oggvorbisstr"
+
+[deps]
+
+source_file="res://serapth Godot2DTutorial master assets/audio/InStormAndSunshine.ogg"
+dest_files=["res://.godot/imported/InStormAndSunshine.ogg-1b371c43d5e5de1ba1185bac1d6e3e57.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
