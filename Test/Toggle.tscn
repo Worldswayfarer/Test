@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://uo22qjn3k4j4"]
+
+[ext_resource type="Script" path="res://Toggle.gd" id="1_gtv14"]
+[ext_resource type="PackedScene" uid="uid://dekjynx0wf3en" path="res://Test.tscn" id="1_ymjfg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Godot" parent="." instance=ExtResource("1_ymjfg")]
+position = Vector2(373.653, 198.388)
+
+[node name="toggle" type="Node2D" parent="."]
+script = ExtResource("1_gtv14")
+
+[connection signal="toggleGodot" from="toggle" to="Godot" method="_on_toggle_toggle_godot"]

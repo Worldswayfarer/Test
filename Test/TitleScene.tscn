@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr1oy5i3riy2n"]
+[gd_scene load_steps=11 format=3 uid="uid://dr1oy5i3riy2n"]
 
 [ext_resource type="Texture2D" uid="uid://bqsrbif6fu4kj" path="res://serapth Godot2DTutorial master assets/graphics/title/title.png" id="1_xnjex"]
 [ext_resource type="AudioStream" uid="uid://k8drj7o3xg0q" path="res://serapth Godot2DTutorial master assets/audio/InStormAndSunshine.ogg" id="2_3wsjn"]
+[ext_resource type="Script" path="res://TitleScene.cs" id="2_efpsw"]
+[ext_resource type="FontFile" uid="uid://baofxmnejobin" path="res://serapth Godot2DTutorial master assets/fonts/animeace.ttf" id="3_n38m5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s37nx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x1jcy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tvgw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r2vcs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1rnuy"]
+
+[sub_resource type="Theme" id="Theme_pvl4x"]
+default_font = ExtResource("3_n38m5")
+default_font_size = 32
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBoxEmpty_s37nx")
+Button/styles/focus = SubResource("StyleBoxEmpty_x1jcy")
+Button/styles/hover = SubResource("StyleBoxEmpty_6tvgw")
+Button/styles/normal = SubResource("StyleBoxEmpty_r2vcs")
+Button/styles/pressed = SubResource("StyleBoxEmpty_1rnuy")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_pvl4x")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -20,3 +58,44 @@ texture = ExtResource("1_xnjex")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_3wsjn")
 autoplay = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../QuitGame")
+focus_neighbor_bottom = NodePath("../QuitGame")
+theme_override_colors/font_color = Color(0.745098, 0.258824, 0.266667, 1)
+theme_override_fonts/font = ExtResource("3_n38m5")
+theme_override_font_sizes/font_size = 32
+text = "Start"
+flat = true
+
+[node name="QuitGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../StartGame")
+focus_neighbor_bottom = NodePath("../StartGame")
+theme_override_colors/font_color = Color(0.745098, 0.258824, 0.266667, 1)
+theme_override_fonts/font = ExtResource("3_n38m5")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+flat = true
