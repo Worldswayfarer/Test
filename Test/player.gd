@@ -50,6 +50,12 @@ func _process(delta):
 	
 
 
+func start(new_position):
+	position = new_position
+	show()
+	$CollisionShape2D.disabled = false
+
+
 func _on_body_entered(body):
 	hide()
 	$CollisionShape2D.set_deferred("disabled", true)
