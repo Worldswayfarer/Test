@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://jr16jhba4m01"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_b8rla"]
-[ext_resource type="PackedScene" uid="uid://1t8mvg17f3a5" path="res://mob.tscn" id="2_5aeio"]
-[ext_resource type="PackedScene" uid="uid://bssmjad6gy7j8" path="res://player.tscn" id="3_phxff"]
-[ext_resource type="PackedScene" uid="uid://dwvy0012eqqst" path="res://hud.tscn" id="4_hkgx7"]
-[ext_resource type="AudioStream" uid="uid://u4bksbyt08wt" path="res://art/house-in-a-forest-loop.ogg" id="5_yfp0q"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ktsil"]
+[ext_resource type="PackedScene" uid="uid://cwi5t8ssc8frs" path="res://scenes/mob.tscn" id="2_146kg"]
+[ext_resource type="PackedScene" uid="uid://bssmjad6gy7j8" path="res://scenes/player.tscn" id="3_tsdvj"]
+[ext_resource type="PackedScene" uid="uid://dwvy0012eqqst" path="res://scenes/hud.tscn" id="4_ld1tl"]
+[ext_resource type="AudioStream" uid="uid://u4bksbyt08wt" path="res://art/house-in-a-forest-loop.ogg" id="5_q1huo"]
 
 [sub_resource type="Curve2D" id="Curve2D_o2yet"]
 _data = {
@@ -13,8 +13,8 @@ _data = {
 point_count = 6
 
 [node name="Main" type="Node"]
-script = ExtResource("1_b8rla")
-_mob_scene = ExtResource("2_5aeio")
+script = ExtResource("1_ktsil")
+_mob_scene = ExtResource("2_146kg")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -27,21 +27,24 @@ color = Color(0.0823529, 0.196078, 0.145098, 1)
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_o2yet")
 
-[node name="MobSpawnLoacation" type="PathFollow2D" parent="MobPath"]
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 
-[node name="Player" parent="." instance=ExtResource("3_phxff")]
-position = Vector2(240, 360)
+[node name="Player" parent="." instance=ExtResource("3_tsdvj")]
+position = Vector2(-50, 360)
 
-[node name="HUD" parent="." instance=ExtResource("4_hkgx7")]
+[node name="HUD" parent="." instance=ExtResource("4_ld1tl")]
 
 [node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_yfp0q")
+stream = ExtResource("5_q1huo")
 autoplay = true
+
+[node name="StartPoint" type="Node2D" parent="."]
+position = Vector2(240, 360)
 
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="hit" from="Player" to="." method="game_over"]

@@ -4,9 +4,9 @@ extends Node
 var _score = 0
 
 
-
 func _ready():
 	randomize()
+	#Signals._new_game.connect(self.new_game())
 
 
 func new_game():
@@ -14,6 +14,8 @@ func new_game():
 	$HUD.update_score(_score)
 	
 	get_tree().call_group("Mobs", "queue_free")
+	
+	$Player._start($StartPoint.position)
 	
 	$ScoreTimer.start()
 	$MobTimer.start()
@@ -26,15 +28,15 @@ func game_over():
 
 
 func _on_mob_timer_timeout():
-	var mob_spawn_loacation = $MobPath/MobSpawnLoacation
-	mob_spawn_loacation.progress_ratio = randf_range(0, 100)
+	var mob_spawn_location = $MobPath/MobSpawnLocation
+	mob_spawn_location.progress_ratio = randf_range(0, 100)
 	
 	var mob = _mob_scene.instantiate()
 	add_child(mob)
 	
-	mob.position = mob_spawn_loacation.position
+	mob.position = mob_spawn_location.position
 	
-	var direction = mob_spawn_loacation.rotation + PI / 2
+	var direction = mob_spawn_location.rotation + PI / 2
 	direction += randf_range(-PI/4, PI/4)
 	mob.rotation = direction
 	

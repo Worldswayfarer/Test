@@ -24,7 +24,10 @@ func show_game_over():
 
 func _on_button_pressed():
 	$Button.hide()
+	$MessageLabel.hide()
 	_start_game.emit()
+	#Signals._new_game.emit()
+
 
 
 func _on_message_timer_timeout():

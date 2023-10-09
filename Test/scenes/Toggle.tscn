@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://uo22qjn3k4j4"]
 
-[ext_resource type="Script" path="res://Toggle.gd" id="1_gtv14"]
-[ext_resource type="PackedScene" uid="uid://dekjynx0wf3en" path="res://Test.tscn" id="1_ymjfg"]
+[ext_resource type="Script" path="res://scripts/Toggle.gd" id="1_gtv14"]
+[ext_resource type="PackedScene" uid="uid://dekjynx0wf3en" path="res://scenes/Test.tscn" id="1_ymjfg"]
 
 [node name="Node2D" type="Node2D"]
 

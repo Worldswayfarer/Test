@@ -6,8 +6,11 @@ signal hit
 @export var _speed: float = 400.0
 var _screen_size = Vector2.ZERO
 
+
 func _ready():
 	_screen_size = get_viewport_rect().size
+	hide()
+
 
 func _start(new_position):
 	position = new_position
@@ -17,6 +20,7 @@ func _start(new_position):
 
 func _process(delta):
 	var direction = Vector2.ZERO
+	
 	if Input.is_action_pressed("move_left"):
 		direction.x -= 1
 		$AnimatedSprite2D.animation = "right"
@@ -35,8 +39,6 @@ func _process(delta):
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v = true
 	
-	
-	
 	if direction.length() > 0:
 		$AnimatedSprite2D.play()
 	else:
@@ -47,13 +49,6 @@ func _process(delta):
 	position += direction * _speed * delta
 	position.x = clamp(position.x, 0, _screen_size.x)
 	position.y = clamp(position.y, 0, _screen_size.y)
-	
-
-
-func start(new_position):
-	position = new_position
-	show()
-	$CollisionShape2D.disabled = false
 
 
 func _on_body_entered(body):

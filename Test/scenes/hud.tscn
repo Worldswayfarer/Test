@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwvy0012eqqst"]
 
-[ext_resource type="Script" path="res://HUD.gd" id="1_2ah1n"]
-[ext_resource type="FontFile" uid="uid://kh78ofaw2ggr" path="res://fonts/xolonium-regular.ttf" id="2_q47iq"]
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_wx1x1"]
+[ext_resource type="FontFile" uid="uid://kh78ofaw2ggr" path="res://fonts/xolonium-regular.ttf" id="2_pdeme"]
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_2ah1n")
+script = ExtResource("1_wx1x1")
 
 [node name="Score" type="Label" parent="."]
 anchors_preset = 5
@@ -14,7 +14,7 @@ offset_left = -0.5
 offset_right = 0.5
 offset_bottom = 23.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_q47iq")
+theme_override_fonts/font = ExtResource("2_pdeme")
 theme_override_font_sizes/font_size = 32
 text = "0"
 
@@ -30,7 +30,7 @@ offset_right = 240.0
 offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_q47iq")
+theme_override_fonts/font = ExtResource("2_pdeme")
 theme_override_font_sizes/font_size = 32
 text = "Dodge the creeps"
 horizontal_alignment = 1
@@ -48,7 +48,7 @@ offset_right = 23.0
 offset_bottom = 31.08
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_q47iq")
+theme_override_fonts/font = ExtResource("2_pdeme")
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
