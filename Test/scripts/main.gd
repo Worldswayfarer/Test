@@ -6,7 +6,8 @@ var _score = 0
 
 func _ready():
 	randomize()
-	#Signals._new_game.connect(self.new_game())
+	Signals._new_game.connect(new_game)
+	Signals._hit.connect(game_over)
 
 
 func new_game():

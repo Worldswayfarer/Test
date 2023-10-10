@@ -1,8 +1,6 @@
 extends Area2D
 
 
-signal hit 
-
 @export var _speed: float = 400.0
 var _screen_size = Vector2.ZERO
 
@@ -54,4 +52,4 @@ func _process(delta):
 func _on_body_entered(body):
 	hide()
 	$CollisionShape2D.set_deferred("disabled", true)
-	hit.emit()
+	Signals._hit.emit()
